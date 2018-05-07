@@ -25,6 +25,20 @@ ipfs daemon
 ```
 => Close the terminal and IPFS daemon will keep running
 
+### Replicate IPFS
+
+These commands will copy all the files existing on the source node to the destination node. So you could have many node running on the planet to be always online.
+
+On the source node :
+```
+[hacker@source ~]$ ipfs refs local > all_the_ipfs_refs
+```
+# now, on the destination node
+```
+[hacker@dest ~]$ for ref in `cat all_the_ipfs_refs`; do ipfs block get $ref > /dev/null; done
+```
+
+
 ## ETH testnet
 ```
   sudo apt-get install software-properties-common
