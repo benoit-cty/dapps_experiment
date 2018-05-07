@@ -35,6 +35,23 @@ ipfs daemon
   geth --testnet --fast --rpc --rpcapi eth,net,web3,personal --rpcport 9546
 ```
 
+
+## NodeJS and Ganache-cli
+```
+  sudo apt-get install -y build-essential
+  curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  sudo npm install -g ganache-cli
+```
+
+## Install your project and run it
+
+
+
+## HTTPS
+If you want HTTPS, use Let's Encrypt certbot. But I won't cover it here.
+
+
 ## Reverse proxy with NGINX
 
 It allow you to make many HTTP servers running locally on different port avaliable on the port 80 via multiple domain pointing to the same IP.
@@ -49,7 +66,7 @@ The drawback is that you have to create domains.
 ```javascript
 server {
     listen 80;
-    server_name testrpc.yourdomain.fr;
+    server_name geth.yourdomain.fr;
     location / {
         proxy_pass http://localhost:8545;
         proxy_redirect off;
@@ -59,7 +76,7 @@ server {
 }
 server {
     listen 80;
-    server_name exoloop.yourdomain.fr;
+    server_name yourapp.yourdomain.fr;
     location / {
         proxy_pass http://localhost:3000;
         proxy_redirect off;
@@ -73,24 +90,11 @@ Run NginX
   sudo service nginx start
 ```
 
-## Ganache-cli
-```
-  sudo apt-get install -y build-essential
-  curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  sudo npm install -g ganache-cli
-```
-
-=> Clone your project and run it
-
-## HTTPS
-Use let's Encrypt certbot
-
 ## Open port in firewall
 
-Open tcp:22 for SSH
-Open tcp:443 and tcp:80 for HTTP and HTTPS
-open tcp:5001 and tcp:4001 For IPFS 
+- Open tcp:22 for SSH
+- Open tcp:443 and tcp:80 for HTTP and HTTPS
+- Open tcp:5001 and tcp:4001 For IPFS 
 
 And that's it you good to go !
 
