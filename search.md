@@ -8,7 +8,7 @@ For the search assignment "try and build a decentralized search Dapp" I think of
 # Decentralized Computing
 
 So the way to do it :
-XXX
+XXX iExec Truffle Docker YaCy
 
 ## Installation
 
@@ -18,5 +18,7 @@ With Docker it also failed, but the comunity helped me and it was the occasion t
 Docker installation as a command line tools is done in one line :
 ```
 echo 'alias iexec='"'"'docker run -e DEBUG=$DEBUG --interactive --tty --rm -v $(pwd):/iexec-project -w /iexec-project iexechub/iexec-sdk'"'"'' >> ~/.bashrc && source ~/.bashrc
+
+```
 
 ```
