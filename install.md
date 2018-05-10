@@ -33,7 +33,7 @@ On the source node :
 ```
 [hacker@source ~]$ ipfs refs local > all_the_ipfs_refs
 ```
-# now, on the destination node
+Now, on the destination node
 ```
 [hacker@dest ~]$ for ref in `cat all_the_ipfs_refs`; do ipfs block get $ref > /dev/null; done
 ```
